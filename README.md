@@ -13,6 +13,5 @@ A fully responsive grade-tracking bootstrap application that manages students' c
 * PDO
 * JavaScript
 * jQuery
-* HTML5
-* CSS3
+* HTML5&CSS3
 * GitHub
