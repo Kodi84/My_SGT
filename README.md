@@ -11,6 +11,7 @@ A fully responsive grade-tracking bootstrap application that manages students' c
 ### Key Technologies:
 * Php 
 * PDO
+* MySQL
 * JavaScript
 * jQuery
 * HTML5
