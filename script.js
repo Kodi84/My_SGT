@@ -2,12 +2,14 @@ var student_array = [];
 var  studentName;
 var  studentCourse;
 var  studentGrade;
+var average;
+var sum;
 var inputIds = ['#studentName','#course','#studentGrade'];
 //when button add clicked
 function add_button(){
     addStudent();
 }
-
+//clear the form 
 function cancel_button(){
     clearAddStudentForm();
 }
@@ -24,7 +26,6 @@ function addStudent(){
 }
 
 function create_student_api(obj){
-
     var data = {
         "name":obj.studentName,
         "course":obj.studentCourse,
@@ -54,10 +55,7 @@ function clearAddStudentForm() { //clear the form
     $(inputIds[1]).val("");
     $(inputIds[2]).val("");
 }
-
-var average;
-var sum;
-
+//calculate average gpa 
 function calculateAverage (){
     average=[];
     sum=0;
@@ -95,8 +93,8 @@ function addStudentToDom(studentObj){
         "class":'btn btn-danger',
         "value":'Delete',
         "data-id":studentObj.studentId
-
     });
+    //append to DOM
     new_tr.append(first_td,second_td,third_td,forth_td);
     forth_td.append(new_input);
     $('tbody').append(new_tr);
@@ -109,7 +107,6 @@ function get_data(){
         method: 'post',
         url:'read.php',
         success:function(result){
-
             var array_from_server = result.data;
             console.log('result from read.php',array_from_server);
             for (var i=0; i < array_from_server.length ; i++){
